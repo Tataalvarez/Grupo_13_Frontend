@@ -5,3 +5,5 @@ Repositorio para el frontend del grupo 13, de MINTIC-UDEA ciclo 3
 Paulo Richar Mora Noguera (richmon430@gmail.com) 
 
 Paola Andrea Domínguez Vélez (paolala1017@gmail.com)
+
+Jully Tatiana Alvarez Martinez (tatianaalvarezmartinez@gmail.com)
