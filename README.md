@@ -9,3 +9,5 @@ Paola Andrea Domínguez Vélez (paolala1017@gmail.com)
 Jully Tatiana Alvarez Martinez (tatianaalvarezmartinez@gmail.com)
 
 Cristian  Alexander Ramirez Molina (ingcristian.ramirez27@gmail.com)
+
+Carmen Cecilia Julio Cortina (ccjuliocortina@gmail.com)
