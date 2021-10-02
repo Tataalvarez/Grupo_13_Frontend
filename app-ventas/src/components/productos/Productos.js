@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Añadir from "./Añadir";
+import Anadir from "./Anadir";
 import Listado from "./Listado";
 //import { useTable } from 'react-table';
 
@@ -43,7 +43,7 @@ const Productos = () => {
   return (
     <>
       <h2 className="text-center">Administrador de productos</h2>
-      <Añadir
+      <Anadir
         createData={createData}
         updateData={updateData}
         dataToEdit={dataToEdit}

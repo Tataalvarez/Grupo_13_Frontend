@@ -7,7 +7,7 @@ const initialForm = {
   estado: "",
 };
 
-const Formulario = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
+const Anadir = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
   const [form, setForm] = useState(initialForm);
 
   useEffect(() => {
@@ -28,7 +28,7 @@ const Formulario = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!form.cliente || !form.vendedor) {
+    if (!form.descripcion || !form.valor || !form.estado) {
       alert("Datos incompletos");
       return;
     }
@@ -78,4 +78,4 @@ const Formulario = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
     </div>
   );
 };
-export default Añadir;
+export default Anadir;

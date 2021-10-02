@@ -1,7 +1,7 @@
 import React from "react";
 import ListadoFila from "./ListadoFila";
 
-const Tabla = ({ data, setDataToEdit, deleteData }) => {
+const Listado = ({ data, setDataToEdit, deleteData }) => {
   return (
     <div className="mt-5 text-center">
       <h3>Listado de productos</h3>
@@ -22,7 +22,7 @@ const Tabla = ({ data, setDataToEdit, deleteData }) => {
             </tr>
           ) : (
             data.map((el) => (
-              <TablaFila
+              <ListadoFila
                 key={el.id}
                 el={el}
                 setDataToEdit={setDataToEdit}

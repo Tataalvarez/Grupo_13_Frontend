@@ -1,6 +1,6 @@
 import React from "react";
 
-const TablaFila = ({ el, setDataToEdit, deleteData }) => {
+const ListadoFila = ({ el, setDataToEdit, deleteData }) => {
   let {
     id,
     descripcion,
