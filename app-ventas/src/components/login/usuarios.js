@@ -1,1 +1,11 @@
-<h1>usuarios</h1>
+import React from 'react'
+
+function usuarios() {
+    return (
+        <div>
+            
+        </div>
+    )
+}
+
+export default usuarios
