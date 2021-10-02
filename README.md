@@ -6,7 +6,7 @@ Paulo Richar Mora Noguera (richmon430@gmail.com) (Activo)
 
 Jully Tatiana Alvarez Martinez (tatianaalvarezmartinez@gmail.com) (Activo)
 
-Paola Andrea Domínguez Vélez (paolala1017@gmail.com)
+Paola Andrea Domínguez Vélez (paolala1017@gmail.com) (Activo)
 
 Cristian  Alexander Ramirez Molina (ingcristian.ramirez27@gmail.com)
 
@@ -16,7 +16,7 @@ Carmen Cecilia Julio Cortina (ccjuliocortina@gmail.com)
 https://trello.com/b/zqXzzdFr/desarrollo-web
 
 ## Descripción de interfaces
-### Ingreso al sistema:
+### Ingreso al sistema: Interfaz de ingreso a el sistema de ventas cuenta con credenciales de usuario y contraseña o con autenticación con google.
 ### Administración de productos:
 ### Administración de ventas:
 ### Gestión de usuarios:
