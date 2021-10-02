@@ -1,7 +1,7 @@
 import React from 'react';
 import GoogleLogin from 'react-google-login';
 
-function LoginGoogle() {
+function BotonGoogle() {
   const respuestaGoogle=(respuesta)=>{
       console.log(respuesta);
   }
@@ -21,4 +21,4 @@ function LoginGoogle() {
   );
 }
 
-export default LoginGoogle;
+export default BotonGoogle;

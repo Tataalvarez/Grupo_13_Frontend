@@ -1,5 +1,5 @@
 import React from 'react'
-import LoginGoogle from './LoginGoogle'
+import BotonGoogle from './BotonGoogle'
 
 
 function Login() {
@@ -30,7 +30,7 @@ function Login() {
                     </button>
                     
                     <div id="Botongoogle"> 
-                    <LoginGoogle/> 
+                    <BotonGoogle/> 
                     </div>
                     
 
