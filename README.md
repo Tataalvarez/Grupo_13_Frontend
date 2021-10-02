@@ -16,7 +16,8 @@ Carmen Cecilia Julio Cortina (ccjuliocortina@gmail.com)
 https://trello.com/b/zqXzzdFr/desarrollo-web
 
 ## Descripción de interfaces
-### Ingreso al sistema: Interfaz de ingreso a el sistema de ventas cuenta con credenciales de usuario y contraseña o con autenticación con google.
+### Ingreso al sistema: 
+Interfaz de ingreso al sistema de ventas cuenta con credenciales de usuario y contraseña o con autenticación con google.
 ### Administración de productos:
 ### Administración de ventas:
 ### Gestión de usuarios:
