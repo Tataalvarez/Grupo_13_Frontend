@@ -78,4 +78,4 @@ const Formulario = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
     </div>
   );
 };
-export default Formulario;
+export default Añadir;
