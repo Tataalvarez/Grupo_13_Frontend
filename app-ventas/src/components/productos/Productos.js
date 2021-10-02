@@ -42,18 +42,22 @@ const Productos = () => {
 
   return (
     <>
-      <h2 className="text-center">Administrador de productos</h2>
-      <Anadir
-        createData={createData}
-        updateData={updateData}
-        dataToEdit={dataToEdit}
-        setDataToEdit={setDataToEdit}
-      />
-      <Listado
-        data={db} 
-        setDataToEdit={setDataToEdit} 
-        deleteData={deleteData} 
-      />
+    <div class="card">
+        <div class="card-body">
+            <h2 className="text-center">Administrador de productos</h2>
+            <Anadir
+                createData={createData}
+                updateData={updateData}
+                dataToEdit={dataToEdit}
+                setDataToEdit={setDataToEdit}
+            />
+            <Listado
+                data={db} 
+                setDataToEdit={setDataToEdit} 
+                deleteData={deleteData} 
+            />
+        </div>
+    </div>
     </>
   );
 };
