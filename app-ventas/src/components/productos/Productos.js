@@ -42,6 +42,12 @@ const Productos = () => {
 
   return (
     <>
+    <div className="buscar">
+        <input id="input" type="text" placeholder="Buscar" required/>
+        <div id="btn-buscar">
+            <i className="fas fa-search"></i>
+        </div>
+    </div>
     <div class="card">
         <div class="card-body">
             <h2 className="text-center">Administrador de productos</h2>
