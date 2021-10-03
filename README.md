@@ -19,6 +19,7 @@ https://trello.com/b/zqXzzdFr/desarrollo-web
 ### Ingreso al sistema: 
 Interfaz de ingreso al sistema de ventas cuenta con credenciales de usuario y contraseña o con autenticación con google.
 ### Administración de productos:
+Interfaz de productos, cuenta con un formulario para crear nuevos productos, editarlos y una tabla para listar esos productos, además con una barra de búsqueda.
 ### Administración de ventas:
 ### Gestión de usuarios:
 
