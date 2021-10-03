@@ -55,37 +55,54 @@ const Pedidos = () => {
     setDb([...db, data]);
   };
   const updateData = (data) => {
-    let newData = db.map(el => el.id === data.id ? data : el);
+    let newData = db.map((el) => (el.id === data.id ? data : el));
     setDb(newData);
   };
 
   const deleteData = (id) => {
-    let isDelete = window.confirm(`Estas seguro de eliminar el registro con el id '${id}?`
+    let isDelete = window.confirm(
+      `Estas seguro de eliminar el registro con el id '${id}?`
     );
 
-    if(isDelete){
-      let newData = db.filter(el => el.id !== id);
+    if (isDelete) {
+      let newData = db.filter((el) => el.id !== id);
       setDb(newData);
     } else {
       return;
     }
   };
 
-
   return (
     <>
-      <h2 className="text-center">Administrador de Ventas</h2>
-      <Formulario
-        createData={createData}
-        updateData={updateData}
-        dataToEdit={dataToEdit}
-        setDataToEdit={setDataToEdit}
-      />
-      <Tabla 
-        data={db} 
-        setDataToEdit={setDataToEdit} 
-        deleteData={deleteData} 
-      />
+      <div className="card">
+        <div className="card-head">
+          <form className="form-inline col-6">
+            <input
+              className="form-control mr-sm-2 buscar"
+              type="search"
+              placeholder="Buscar"
+              required
+            />
+            <button class="btn btn-success bt-sm my-2 my-sm-0" type="submit">
+              Search
+            </button>
+          </form>
+          <h2 className="text-center">Administrador de Ventas</h2>
+          <Formulario
+            createData={createData}
+            updateData={updateData}
+            dataToEdit={dataToEdit}
+            setDataToEdit={setDataToEdit}
+          />
+        </div>
+        <div className="card-body">
+          <Tabla
+            data={db}
+            setDataToEdit={setDataToEdit}
+            deleteData={deleteData}
+          />
+        </div>
+      </div>
     </>
   );
 };

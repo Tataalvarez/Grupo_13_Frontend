@@ -1,3 +1,10 @@
 #root {
   font-size: 16px;
+  background-color: #0f4c75;
+  height: 100vh;
+}
+
+.buscar {
+  margin-top: 10px;
+  display: inline-block;
 }
