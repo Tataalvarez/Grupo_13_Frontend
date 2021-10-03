@@ -73,17 +73,17 @@ const Pedidos = () => {
   };
 
   return (
-    <>
+    <div className="row mt-5">
       <div className="card">
         <div className="card-head">
           <form className="form-inline col-6">
             <input
-              className="form-control mr-sm-2 buscar"
+              className="mr-sm-2 buscar"
               type="search"
               placeholder="Buscar"
               required
             />
-            <button class="btn btn-success bt-sm my-2 my-sm-0" type="submit">
+            <button class="btn btn-success btn-sm" type="submit">
               Search
             </button>
           </form>
@@ -103,7 +103,7 @@ const Pedidos = () => {
           />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

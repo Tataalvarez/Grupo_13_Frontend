@@ -12,7 +12,6 @@ const TablaFila = ({ el, setDataToEdit, deleteData }) => {
     cliente,
     vendedor,
     estado,
-    acciones,
   } = el;
   return (
     <>
@@ -27,20 +26,9 @@ const TablaFila = ({ el, setDataToEdit, deleteData }) => {
         <td>{cliente}</td>
         <td>{vendedor}</td>
         <td>{estado}</td>
-        <td>{acciones}</td>
         <td>
-          <button
-            className="btn btn-primary btn-sm"
-            onClick={() => setDataToEdit(el)}
-          >
-            Editar
-          </button>
-          <button
-            className="btn btn-danger btn-sm"
-            onClick={() => deleteData(id)}
-          >
-            Eliminar
-          </button>
+          <i class="far fa-edit" onClick={() => setDataToEdit(el)}></i>
+          <i class="fas fa-trash-alt" onClick={() => deleteData(id)}></i>
         </td>
       </tr>
     </>

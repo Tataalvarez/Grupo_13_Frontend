@@ -4,7 +4,26 @@
   height: 100vh;
 }
 
+
+.far, .fas {
+  cursor: pointer;
+  margin-right: 7px;
+}
+
+.fa-edit {
+  color: #158cba;
+}
+
+.fa-trash-alt {
+  color: #ff4136;
+}
+
 .buscar {
   margin-top: 10px;
-  display: inline-block;
+}
+
+.form-control {
+  padding: 15px 7px;
+  font-size: 10px;
+  display: inline;
 }
