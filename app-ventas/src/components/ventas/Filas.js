@@ -1,8 +1,9 @@
 import React from "react";
+import "./Pedidos.css";
 
-const TablaFila = ({ el, setDataToEdit, deleteData }) => {
+const Filas = ({ el, setDataToEdit, deleteData }) => {
   let {
-    id,
+    id_venta,
     total,
     id_vendedor,
     cantidad,
@@ -16,7 +17,7 @@ const TablaFila = ({ el, setDataToEdit, deleteData }) => {
   return (
     <>
       <tr>
-        <td>{id}</td>
+        <td>{id_venta}</td>
         <td>{total}</td>
         <td>{id_vendedor}</td>
         <td>{cantidad}</td>
@@ -27,12 +28,12 @@ const TablaFila = ({ el, setDataToEdit, deleteData }) => {
         <td>{vendedor}</td>
         <td>{estado}</td>
         <td>
-          <i class="far fa-edit" onClick={() => setDataToEdit(el)}></i>
-          <i class="fas fa-trash-alt" onClick={() => deleteData(id)}></i>
+          <i className="far fa-edit" onClick={() => setDataToEdit(el)}></i>
+          <i className="fas fa-trash-alt" onClick={() => deleteData(id_venta)}></i>
         </td>
       </tr>
     </>
   );
 };
 
-export default TablaFila;
+export default Filas;

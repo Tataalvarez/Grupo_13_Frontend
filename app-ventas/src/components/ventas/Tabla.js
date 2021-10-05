@@ -1,5 +1,6 @@
 import React from "react";
-import TablaFila from "./TablaFila";
+import Filas from "./Filas";
+import "./Pedidos.css"
 
 const Tabla = ({ data, setDataToEdit, deleteData }) => {
   return (
@@ -28,7 +29,7 @@ const Tabla = ({ data, setDataToEdit, deleteData }) => {
             </tr>
           ) : (
             data.map((el) => (
-              <TablaFila
+              <Filas
                 key={el.id}
                 el={el}
                 setDataToEdit={setDataToEdit}

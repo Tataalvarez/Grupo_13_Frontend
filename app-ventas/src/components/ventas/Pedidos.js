@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import Formulario from "./Formulario";
 import Tabla from "./Tabla";
+import "./Pedidos.css";
 //import { useTable } from 'react-table';
 
 const dataBase = [
   {
-    id: 1,
+    id_venta: 1,
     total: "45",
     valor_total: 450,
     id_vendedor: "2",
@@ -18,7 +19,7 @@ const dataBase = [
     estado: "Cancelada",
   },
   {
-    id: 2,
+    id_venta: 2,
     total: "25",
     valor_total: 400,
     id_vendedor: "3",
@@ -31,7 +32,7 @@ const dataBase = [
     estado: "En proceso",
   },
   {
-    id: 3,
+    id_venta: 3,
     total: "8",
     valor_total: 350,
     id_vendedor: "4",
@@ -50,22 +51,22 @@ const Pedidos = () => {
   const [dataToEdit, setDataToEdit] = useState(null);
 
   const createData = (data) => {
-    data.id = Date.now();
+    data.id_venta = Date.now();
     //console.log(data);
     setDb([...db, data]);
   };
   const updateData = (data) => {
-    let newData = db.map((el) => (el.id === data.id ? data : el));
+    let newData = db.map((el) => (el.id_venta === data.id_venta ? data : el));
     setDb(newData);
   };
 
-  const deleteData = (id) => {
+  const deleteData = (id_venta) => {
     let isDelete = window.confirm(
-      `Estas seguro de eliminar el registro con el id '${id}?`
+      `Estas seguro de eliminar el registro con el id '${id_venta}?`
     );
 
     if (isDelete) {
-      let newData = db.filter((el) => el.id !== id);
+      let newData = db.filter((el) => el.id_venta !== id_venta);
       setDb(newData);
     } else {
       return;

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 const initialForm = {
-  id: null,
+  id_venta: null,
   total: "",
   id_vendedor: null,
   cantidad: "",
@@ -10,8 +10,8 @@ const initialForm = {
   documento: "",
   cliente: "",
   vendedor: "",
-  acciones: "",
   estado: "",
+  acciones: "",
 };
 
 const Formulario = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
@@ -35,12 +35,12 @@ const Formulario = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!form.cliente || !form.vendedor) {
+    if (!form.total || !form.cantidad || !form.precio || !form.fecha || !form.documento || !form.cliente || !form.vendedor || !form.estado ) {
       alert("Datos incompletos");
       return;
     }
 
-    if (form.id === null) {
+    if (form.id_venta === null) {
       createData(form);
     } else {
       updateData(form);
