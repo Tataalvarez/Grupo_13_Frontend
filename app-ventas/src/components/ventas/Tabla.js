@@ -1,5 +1,5 @@
 import React from "react";
-import Filas from "./Filas";
+import Pedidos from "./Pedidos";
 import "./Pedidos.css"
 
 const Tabla = ({ data, setDataToEdit, deleteData }) => {
@@ -9,7 +9,7 @@ const Tabla = ({ data, setDataToEdit, deleteData }) => {
       <table className="table table-striped table-hover">
         <thead>
           <tr>
-            <th scope="col">Id</th>
+            <th scope="col">Id Venta</th>
             <th scope="col">Total</th>
             <th scope="col">Id_vendedor</th>
             <th scope="col">Cantidad</th>
@@ -29,8 +29,8 @@ const Tabla = ({ data, setDataToEdit, deleteData }) => {
             </tr>
           ) : (
             data.map((el) => (
-              <Filas
-                key={el.id}
+              <Pedidos
+                key={el.id_venta}
                 el={el}
                 setDataToEdit={setDataToEdit}
                 deleteData={deleteData}

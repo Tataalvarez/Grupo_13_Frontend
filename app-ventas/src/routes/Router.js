@@ -1,13 +1,18 @@
+// Modulos
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Pedidos from "./ventas/Pedidos";
+
+// Componentes
+import Navegacion from "../components/shared/navbar/Navegacion";
+import Home from "../components/shared/home/Home";
 
 const Rutas = () => {
   return (
     <div>
       <Router>
+        <Navegacion />
         <Switch>
-          <Route exact path="/ventas" component={Pedidos} />
+          <Route exact path="/" component={Home} />
         </Switch>
       </Router>
     </div>
