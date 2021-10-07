@@ -8,14 +8,12 @@ import Home from "../components/shared/home/Home";
 
 const Rutas = () => {
   return (
-    <div>
-      <Router>
-        <Navegacion />
-        <Switch>
-          <Route exact path="/" component={Home} />
-        </Switch>
-      </Router>
-    </div>
+    <Router>
+      <Navegacion />
+      <Switch>
+        <Route exact path="/" component={Home} />
+      </Switch>
+    </Router>
   );
 };
 

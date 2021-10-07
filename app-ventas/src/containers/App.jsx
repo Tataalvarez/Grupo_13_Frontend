@@ -1,11 +1,14 @@
-import React from 'react'
+import React from "react";
+import { Container } from "react-bootstrap";
 
-function App() {
+const App = () => {
   return (
     <div>
-      <h2>Hola</h2>
+      <h2>
+        Hola
+      </h2>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
