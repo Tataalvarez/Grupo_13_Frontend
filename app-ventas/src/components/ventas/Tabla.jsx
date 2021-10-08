@@ -1,8 +1,8 @@
 import React from "react";
-import Pedidos from "./Pedidos";
-import "./Pedidos.css"
+import { Pedidos } from "./Pedidos";
+import "./Ventas.css";
 
-const Tabla = ({ data, setDataToEdit, deleteData }) => {
+export function Tabla ({ data, setDataToEdit, deleteData }) {
   return (
     <div className="mt-5 text-center">
       <h3>Ventas Realizadas</h3>
@@ -41,6 +41,4 @@ const Tabla = ({ data, setDataToEdit, deleteData }) => {
       </table>
     </div>
   );
-};
-
-export default Tabla;
+}

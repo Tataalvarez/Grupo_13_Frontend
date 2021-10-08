@@ -2,9 +2,9 @@ import React from "react";
 import { Card, Container, ListGroup } from "react-bootstrap";
 import "./Home.css";
 
-const Home = () => {
+export function Home () {
   return (
-    <div>
+    <>
       <Container className="mt-2">
         <Card border="info home">
           <Card.Header className="text-center">
@@ -37,8 +37,6 @@ const Home = () => {
           </Card.Footer>
         </Card>
       </Container>
-    </div>
+    </>
   );
-};
-
-export default Home;
+}

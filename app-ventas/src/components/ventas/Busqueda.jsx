@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 
-const Busqueda = () => {
+export function Busqueda () {
   const [usuarios, setUsuarios] = useState([]);
   const [tablaUsuarios, setTablaUsuarios] = useState([]);
   const [buscar, setBuscar] = useState('');
@@ -86,6 +86,4 @@ const Busqueda = () => {
       </div>
     </div>
   );
-};
-
-export default Busqueda;
+}

@@ -1,8 +1,11 @@
+// Modulos
 import React, { useState } from "react";
-import Formulario from "./Formulario";
-import Tabla from "./Tabla";
+import { Container, Card } from "react-bootstrap";
+
+// Componentes
+import { Formulario } from "./Formulario";
+import { Tabla } from "./Tabla";
 import "./Ventas.css";
-//import { useTable } from 'react-table';
 
 const dataBase = [
   {
@@ -46,7 +49,7 @@ const dataBase = [
   },
 ];
 
-const Ventas = () => {
+export function Ventas() {
   const [db, setDb] = useState(dataBase);
   const [dataToEdit, setDataToEdit] = useState(null);
 
@@ -74,38 +77,25 @@ const Ventas = () => {
   };
 
   return (
-    <div className="row mt-5">
-      <div className="card">
-        <div className="card-head">
-          <form className="form-inline col-6">
-            <input
-              className="mr-sm-2 buscar"
-              type="search"
-              placeholder="Buscar"
-              required
-            />
-            <button class="btn btn-success btn-sm" type="submit">
-              Search
-            </button>
-          </form>
-          <h2 className="text-center">Administrador de Ventas</h2>
+    <Container className="mt-2">
+      <Card border="info home">
+        <Card.Header className="text-center text-uppercase">
+          Registro de Ventas
+        </Card.Header>
+        <Card.Body className="px-3">
           <Formulario
             createData={createData}
             updateData={updateData}
             dataToEdit={dataToEdit}
             setDataToEdit={setDataToEdit}
           />
-        </div>
-        <div className="card-body">
           <Tabla
             data={db}
             setDataToEdit={setDataToEdit}
             deleteData={deleteData}
           />
-        </div>
-      </div>
-    </div>
+        </Card.Body>
+      </Card>
+    </Container>
   );
-};
-
-export default Ventas;
+}

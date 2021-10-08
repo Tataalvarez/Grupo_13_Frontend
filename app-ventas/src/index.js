@@ -1,14 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 //import './index.css';
-import Router from './routes/Router';
+import { Routs } from "./routes/Routs";
 
-import './firebase'
-import 'bootswatch/dist/lumen/bootstrap.min.css'
+import "./firebase";
+import "bootswatch/dist/lumen/bootstrap.min.css";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router />
+    <Routs />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );

@@ -2,7 +2,7 @@ import React from 'react'
 import { Container, Nav, Navbar } from "react-bootstrap";
 //import { Link } from 'react-router-dom';
 
-const Navegacion = () => {
+export function Navegacion () {
   return (
     <Navbar className="navbar navbar-expand-lg navbar-dark bg-primary">
       <Container>
@@ -22,5 +22,3 @@ const Navegacion = () => {
     </Navbar>
   )
 }
-
-export default Navegacion;

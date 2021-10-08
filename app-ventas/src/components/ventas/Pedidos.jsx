@@ -1,7 +1,7 @@
 import React from "react";
 //import "./Pedidos.css";
 
-const Pedidos = ({ el, setDataToEdit, deleteData }) => {
+export function Pedidos ({ el, setDataToEdit, deleteData }) {
   let {
     id_venta,
     total,
@@ -34,6 +34,4 @@ const Pedidos = ({ el, setDataToEdit, deleteData }) => {
       </tr>
     </>
   );
-};
-
-export default Pedidos;
+}
