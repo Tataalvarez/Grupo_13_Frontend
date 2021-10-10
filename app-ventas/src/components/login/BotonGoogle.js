@@ -1,23 +1,44 @@
 import React from 'react';
-import GoogleLogin from 'react-google-login';
+import firebase from 'firebase/compat/app';
+import {GoogleAuthProvider} from 'firebase/auth';
+
 
 function BotonGoogle() {
-  const respuestaGoogle=(respuesta)=>{
-      console.log(respuesta);
+
+  const provider = new firebase.auth.GoogleAuthProvider ();
+
+  const signInWithGoogle =()=>{
+    
+    firebase.auth().signInWithPopup(provider)
+  .then((result) => {
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    const credential = GoogleAuthProvider.credentialFromResult(result);
+    const token = credential.accessToken;
+    // The signed-in user info.
+    const user = result.user;
+    // ...
+  }).catch((error) => {
+    // Handle Errors here.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // The email of the user's account used.
+    const email = error.email;
+    // The AuthCredential type that was used.
+    const credential = error.credential
+    // ...
+  });
+
+      
   }
 
   return (
-      <div className="BotonLogin text-center">
-
-          <GoogleLogin
-  clientId="77872791370-lsc9uefumnejcvs3lu13flg5g5cn1lc3.apps.googleusercontent.com"
-  buttonText="Login"
-  onSuccess={respuestaGoogle}
-  onFailure={respuestaGoogle}
-  cookiePolicy={'single_host_origin'}
-  />
+    <div className="BotonLogin text-center">
+      
+      <button type="button" onClick={signInWithGoogle}> </button>
 
     </div>
+      
+
   );
 }
 
