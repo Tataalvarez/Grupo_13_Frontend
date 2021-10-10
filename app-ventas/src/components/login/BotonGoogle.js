@@ -7,6 +7,10 @@ function BotonGoogle() {
 
   const provider = new firebase.auth.GoogleAuthProvider ();
 
+  
+
+
+
   const signInWithGoogle =()=>{
     
     firebase.auth().signInWithPopup(provider)
