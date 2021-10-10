@@ -1,27 +1,31 @@
 import React, { useEffect, useState } from "react";
-import { Form, Col, Button, Row } from "react-bootstrap";
+import {
+  FormControl,
+  InputGroup,
+  Button,
+  Col,
+  Row,
+  Form,
+} from "react-bootstrap";
+//import { FormControl, Form, Col, Button, Row } from "react-bootstrap";
+//import { v4 as uuidv4 } from "uuid";
 
 const initialForm = {
-  id_venta: null,
+  codigo: null,
   cantidad: "",
   detalle: "",
   precio: "",
   total: "",
-  id_vendedor: null,
   fecha: "",
   documento: "",
   cliente: "",
-  vendedor: "",
   estado: "",
+  id: "",
+  vendedor: "",
   acciones: "",
 };
 
-export function Formulario({
-  createData,
-  updateData,
-  dataToEdit,
-  setDataToEdit,
-}) {
+const Formulario = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
   const [form, setForm] = useState(initialForm);
 
   useEffect(() => {
@@ -50,13 +54,15 @@ export function Formulario({
       !form.fecha ||
       !form.documento ||
       !form.cliente ||
-      !form.estado
+      !form.estado ||
+      !form.id ||
+      !form.vendedor
     ) {
       alert("Datos incompletos");
       return;
     }
 
-    if (form.id_venta === null) {
+    if (form.codigo === null) {
       createData(form);
     } else {
       updateData(form);
@@ -71,108 +77,133 @@ export function Formulario({
   };
 
   return (
-    <>
-      <h3>{dataToEdit ? "Editar" : "Agregar"}</h3>
-      <Form className="pt=2" onSubmit={handleSubmit}>
-        <Row className="mb-3">
-          <Col xs={2}>
-            <Form.Control
-              type="number"
-              nane="cantidad"
-              placeholder="Cantidad"
+    <Form onSubmit={handleSubmit}>
+      <Row>
+        <InputGroup className="mb-3">
+          <Col sm={1} className="px-2">
+            <FormControl
+              size="sm"
+              type="text"
+              name="cantidad"
+              placeholder="Cant"
               onChange={handleChange}
               value={form.cantidad}
             />
           </Col>
-          <Col xs={6}>
-            <Form.Control
+          <Col sm={5} className="px-2">
+            <FormControl
+              size="sm"
               type="text"
-              nane="detalle"
-              placeholder="Detalle de la Venta"
+              name="detalle"
+              placeholder="Detalle"
               onChange={handleChange}
               value={form.detalle}
             />
           </Col>
-          <Col xs={2}>
-            <Form.Control
-              type="number"
-              nane="precio"
-              placeholder="Valor Unitario"
+          <Col sm={2} className="px-2">
+            <FormControl
+              size="sm"
+              type="text"
+              name="precio"
+              placeholder="V.Unitario"
               onChange={handleChange}
               value={form.precio}
             />
           </Col>
-          <Col xs={2}>
-            <Form.Control
+          <Col sm={2} className="px-2">
+            <FormControl
+              size="sm"
               type="text"
-              nane="total"
-              placeholder="Valor Total"
+              name="total"
+              placeholder="V.Total"
               onChange={handleChange}
               value={form.total}
             />
           </Col>
-        </Row>
-        <Row className="mb-3">
-          <Col xs={2}>
-            <Form.Control
+          <Col sm={2} className="px-2">
+            <FormControl
+              size="sm"
               type="text"
-              nane="fecha"
-              placeholder="Fecha"
+              name="estado"
+              placeholder="Estado Venta"
+              onChange={handleChange}
+              value={form.estado}
+            />
+          </Col>
+        </InputGroup>
+      </Row>
+      <Row>
+        <InputGroup className="mb-3">
+          <Col sm={2} className="px-2">
+            <FormControl
+              size="sm"
+              type="text"
+              name="fecha"
+              placeholder="Fecha(DD-MM-YY)"
               onChange={handleChange}
               value={form.fecha}
             />
           </Col>
-          <Col xs={6}>
-            <Form.Control
+          <Col sm={2} className="px-2">
+            <FormControl
+              size="sm"
               type="text"
-              nane="cliente"
-              placeholder="Nombre del Cliente"
-              onChange={handleChange}
-              value={form.cliente}
-            />
-          </Col>
-          <Col xs={2}>
-            <Form.Control
-              type="text"
-              nane="documento"
+              name="documento"
               placeholder="Documento"
               onChange={handleChange}
               value={form.documento}
             />
           </Col>
-          <Col xs={2}>
-            <Form.Select
+          <Col sm={3} className="px-2">
+            <FormControl
+              size="sm"
               type="text"
-              nane="Estado"
+              name="cliente"
+              placeholder="Nombre del Cliente"
               onChange={handleChange}
-              value={form.estado}
-            >
-              <option value="1">En proceso</option>
-              <option value="2">Entregada</option>
-              <option value="3">Cancelada</option>
-            </Form.Select>
+              value={form.cliente}
+            />
           </Col>
-        </Row>
-        <Row>
-          <Col sm={{ span: 10, offset: 5 }}>
-            <Button
-              className="btn btn-success btn-sm mx-4"
-              type="submit"
-              value="Enviar"
-            >
-              Enviar
-            </Button>
-            <Button
-              className="btn btn-secondary btn-sm"
-              type="reset"
-              value="Limpiar"
-              onClick={handleReset}
-            >
-              Limpiar
-            </Button>
+          <Col sm={2} className="px-2">
+            <FormControl
+              size="sm"
+              type="text"
+              name="id"
+              placeholder="Id del Vendedor"
+              onChange={handleChange}
+              value={form.id}
+            />
           </Col>
-        </Row>
-      </Form>
-    </>
+          <Col sm={2} className="px-2">
+            <FormControl
+              size="sm"
+              type="text"
+              name="vendedor"
+              placeholder="Nombre Vendedor"
+              onChange={handleChange}
+              value={form.vendedor}
+            />
+          </Col>
+        </InputGroup>
+      </Row>
+      <Row>
+        <Col>
+          <Button size="sm" variant="success" type="submit" value="Enviar">
+            Enviar
+          </Button>
+          <Button
+            size="sm"
+            variant="secondary"
+            type="reset"
+            value="Limpiar"
+            onClick={handleReset}
+          >
+            Limpiar
+          </Button>
+        </Col>
+      </Row>
+    </Form>
   );
-}
+};
+
+export default Formulario;

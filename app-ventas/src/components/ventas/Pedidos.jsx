@@ -1,37 +1,42 @@
 import React from "react";
 //import "./Pedidos.css";
 
-export function Pedidos ({ el, setDataToEdit, deleteData }) {
+const Pedidos = ({ el, setDataToEdit, deleteData }) => {
   let {
-    id_venta,
-    total,
-    id_vendedor,
+    codigo,
     cantidad,
+    detalle,
     precio,
+    total,
     fecha,
-    documento,
     cliente,
-    vendedor,
+    documento,
     estado,
+    id,
+    vendedor
   } = el;
+
   return (
     <>
       <tr>
-        <td>{id_venta}</td>
-        <td>{total}</td>
-        <td>{id_vendedor}</td>
+        <td>{codigo}</td>
         <td>{cantidad}</td>
+        <th>{detalle}</th>
         <td>{precio}</td>
+        <td>{total}</td>
         <td>{fecha}</td>
         <td>{documento}</td>
         <td>{cliente}</td>
-        <td>{vendedor}</td>
         <td>{estado}</td>
+        <td>{id}</td>
+        <td>{vendedor}</td>
         <td>
           <i className="far fa-edit" onClick={() => setDataToEdit(el)}></i>
-          <i className="fas fa-trash-alt" onClick={() => deleteData(id_venta)}></i>
+          <i className="fas fa-trash-alt" onClick={() => deleteData(codigo)}></i>
         </td>
       </tr>
     </>
   );
 }
+
+export default Pedidos;

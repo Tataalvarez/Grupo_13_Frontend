@@ -1,75 +1,34 @@
 // Modulos
 import React, { useState } from "react";
 import { Container, Card } from "react-bootstrap";
+//import { v4 as uuidv4 } from "uuid"
 
 // Componentes
-import { Formulario } from "./Formulario";
-import { Tabla } from "./Tabla";
+import Formulario from "./Formulario";
+import Tabla from "./Tabla";
 import "./Ventas.css";
 
-const dataBase = [
-  {
-    id_venta: 1,
-    total: "45",
-    valor_total: 450,
-    id_vendedor: "2",
-    cantidad: 9,
-    valor_unitario: 50,
-    fecha: "12-08-2020",
-    documento: "87453422",
-    cliente: "Richar Mora",
-    vendedor: "Diana",
-    estado: "Cancelada",
-  },
-  {
-    id_venta: 2,
-    total: "25",
-    valor_total: 400,
-    id_vendedor: "3",
-    cantidad: 8,
-    valor_unitario: 50,
-    fecha: "12-08-2020",
-    documento: "87453422",
-    cliente: "Juan Mora",
-    vendedor: "Andrea",
-    estado: "En proceso",
-  },
-  {
-    id_venta: 3,
-    total: "8",
-    valor_total: 350,
-    id_vendedor: "4",
-    cantidad: 7,
-    valor_unitario: 50,
-    fecha: "12-08-2020",
-    documento: "87453422",
-    cliente: "David Mora",
-    vendedor: "Tatiana",
-    estado: "Entregada",
-  },
-];
-
-export function Ventas() {
+const Ventas = ({dataBase}) => {
   const [db, setDb] = useState(dataBase);
   const [dataToEdit, setDataToEdit] = useState(null);
 
   const createData = (data) => {
-    data.id_venta = Date.now();
+    data.codigo = Date.now();
     //console.log(data);
     setDb([...db, data]);
   };
   const updateData = (data) => {
-    let newData = db.map((el) => (el.id_venta === data.id_venta ? data : el));
+    let newData = db.map((el) => (el.codigo === data.codigo ? data : el));
     setDb(newData);
   };
 
-  const deleteData = (id_venta) => {
+  const deleteData = (codigo) => {
     let isDelete = window.confirm(
-      `Estas seguro de eliminar el registro con el id '${id_venta}?`
+      `Estas seguro de eliminar el pedido con codigo: ${codigo}?`
     );
 
     if (isDelete) {
-      let newData = db.filter((el) => el.id_venta !== id_venta);
+      let newData = db.filter((el) => el.codigo !== codigo);
       setDb(newData);
     } else {
       return;
@@ -99,3 +58,5 @@ export function Ventas() {
     </Container>
   );
 }
+
+export default Ventas;

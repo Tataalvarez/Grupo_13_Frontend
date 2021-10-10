@@ -1,14 +1,19 @@
-import React from "react";
+import React, { Suspense } from "react";
 import ReactDOM from "react-dom";
 //import './index.css';
-import { Routs } from "./routes/Routs";
+import { App } from "./App";
+import { FirebaseAppProvider } from "reactfire";
 
-import "./firebase";
+import firebaseConfig from "./firebase";
 import "bootswatch/dist/lumen/bootstrap.min.css";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Routs />
+    <FirebaseAppProvider firebaseConfig={firebaseConfig}>
+      <Suspense fallback={'Conectando la app...'}>
+        <App />
+      </Suspense>
+    </FirebaseAppProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
