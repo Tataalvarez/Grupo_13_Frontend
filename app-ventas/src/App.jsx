@@ -63,9 +63,6 @@ export function App() {
           <Route exact path="/ventas">
             <Ventas dataBase={dataBase} />
           </Route>
-          <Route exact path="/buscar">
-            <Busqueda dataBase={dataBase} />
-          </Route>
         </Switch>
       </Router>
     </>
