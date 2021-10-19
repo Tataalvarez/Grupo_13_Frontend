@@ -6,7 +6,7 @@ import { useFirebaseApp } from "reactfire";
 import { Navegacion } from "./components/shared/navbar/Navegacion";
 import { Home } from "./components/shared/home/Home";
 import Ventas from "./components/ventas/Ventas";
-//import { Busqueda } from "./components/ventas/Busqueda";
+import { Busqueda } from "./components/ventas/Busqueda";
 
 //import { Container } from "react-bootstrap";
 
