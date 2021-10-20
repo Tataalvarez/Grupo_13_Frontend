@@ -3,10 +3,8 @@ import React, { Suspense } from "react";
 import ReactDOM from "react-dom";
 //import './index.css';
 import App from "./App";
-import { FirebaseAppProvider } from "reactfire";
-import firebaseConfig from "./firebase";
+import firebase from 'firebase/compat/app';
 import "bootswatch/dist/lumen/bootstrap.min.css";
-
 
 
 const firebaseConfig = {
@@ -20,16 +18,10 @@ const firebaseConfig = {
 };
 
 
-  firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
 
 ReactDOM.render(
-  <React.StrictMode>
-    <FirebaseAppProvider firebaseConfig={firebaseConfig}>
-      <Suspense fallback={'Conectando la app...'}>
-        <App />
-      </Suspense>
-    </FirebaseAppProvider>
-  </React.StrictMode>,
+  <App />,
   document.getElementById("root")
 );
 
