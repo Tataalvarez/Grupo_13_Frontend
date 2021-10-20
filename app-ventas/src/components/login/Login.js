@@ -1,5 +1,8 @@
 import React from 'react'
 import BotonGoogle from './BotonGoogle'
+import "./login.css";
+
+
 
 
 function Login() {
