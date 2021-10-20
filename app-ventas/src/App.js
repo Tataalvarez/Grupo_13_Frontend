@@ -11,8 +11,6 @@ import Ventas from './components/ventas/Ventas';
 // import Ventas from "./components/ventas/Ventas";
 // import { Busqueda } from "./components/ventas/Busqueda";
 
-//import { Container } from "react-bootstrap";
-
 const App = () => {
   const dataBase = [
     {
