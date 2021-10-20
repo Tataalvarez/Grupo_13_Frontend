@@ -6,8 +6,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from './components/shared/Header';
 import Home from "./components/shared/Home";
 import Ventas from './components/ventas/Ventas';
-// import Login from './components/login/Login'
-// import Login from "./components/login/Login";
+import Login from './components/login/Login';
 // import Ventas from "./components/ventas/Ventas";
 // import { Busqueda } from "./components/ventas/Busqueda";
 
@@ -59,11 +58,14 @@ const App = () => {
     <Router>
       <Header />
       <Switch>
-        <Route exact path="/ventas" >
+        <Route path="/login" >
+          <Login />
+        </Route>
+        <Route path="/ventas" >
           <Ventas dataBase={dataBase} />
         </Route>
         <Route>
-          <Home exact path="/home" />
+          <Home exact path="/" />
         </Route>
         <Home />
       </Switch>
