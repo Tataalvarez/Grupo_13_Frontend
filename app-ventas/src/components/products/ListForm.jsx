@@ -1,13 +1,14 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 
 const initialForm = {
   id: null,
-  descripcion: "",
-  valor: "",
-  estado: "",
+  description: "",
+  price: "",
+  status: "",
 };
 
-const Anadir = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
+const ListForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
   const [form, setForm] = useState(initialForm);
 
   useEffect(() => {
@@ -25,21 +26,25 @@ const Anadir = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const url = "mongodb://prmora:joalruva69%2a@localhost:27017/?authSource=admin&readPreference=primary&appname=MongoDB%20Compass&ssl=false";
 
-    if (!form.descripcion || !form.valor || !form.estado) {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    if (!form.description || !form.price || !form.status) {
       alert("Datos incompletos");
       return;
     }
-
+    
     if (form.id === null) {
       createData(form);
     } else {
       updateData(form);
     }
-
+    
     handleReset();
+    const res = await axios.post(url, form);
+    console.log(res);
   };
 
   const handleReset = (e) => {
@@ -53,24 +58,24 @@ const Anadir = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          name="descripcion"
+          name="description"
           placeholder="Descripción del producto"
           onChange={handleChange}
-          value={form.descripcion}
+          value={form.description}
         />
         <input
           type="text"
-          name="valor"
-          placeholder="valor unitario"
+          name="price"
+          placeholder="Valor unitario"
           onChange={handleChange}
-          value={form.valor}
+          value={form.price}
         />
         <input
           type="text"
-          name="estado"
+          name="status"
           placeholder="Estado del producto"
           onChange={handleChange}
-          value={form.estado}
+          value={form.status}
         />
         <input className="btn btn-success btn-sm" type="submit" value="Enviar" />
         <input className="btn btn-secondary btn-sm" type="reset" value="Limpiar" onClick={handleReset} />
@@ -78,4 +83,4 @@ const Anadir = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
     </div>
   );
 };
-export default Anadir;
+export default ListForm;

@@ -1,19 +1,13 @@
+// Modulos
 import React, { useState } from "react";
-import Anadir from "./Anadir";
-import Listado from "./Listado";
+
+// Componentes
+import ListForm from "./ListForm";
+import Table from "./Table";
+import './Products.css'
 //import { useTable } from 'react-table';
 
-const dataBase = [
-  {
-    id: 1,
-    descripcion: "",
-    valor: 350,
-    estado: "No disponible",
-  },
-  
-];
-
-const Productos = () => {
+const Productos = ({dataBase}) => {
   const [db, setDb] = useState(dataBase);
   const [dataToEdit, setDataToEdit] = useState(null);
 
@@ -37,27 +31,26 @@ const Productos = () => {
     } else {
       return;
     }
-  };
-
+  } 
 
   return (
     <>
-    <div className="buscar">
+    {/* <div className="buscar">
         <input id="input" type="text" placeholder="Buscar" required/>
         <div id="btn-buscar">
             <i className="fas fa-search"></i>
         </div>
-    </div>
-    <div class="card">
-        <div class="card-body">
+    </div> */}
+    <div className="card">
+        <div className="card-body">
             <h2 className="text-center">Administrador de productos</h2>
-            <Anadir
+            <ListForm
                 createData={createData}
                 updateData={updateData}
                 dataToEdit={dataToEdit}
                 setDataToEdit={setDataToEdit}
             />
-            <Listado
+            <Table
                 data={db} 
                 setDataToEdit={setDataToEdit} 
                 deleteData={deleteData} 

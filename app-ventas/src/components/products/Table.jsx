@@ -1,7 +1,7 @@
 import React from "react";
-import ListadoFila from "./ListadoFila";
+import Product from "./Product";
 
-const Listado = ({ data, setDataToEdit, deleteData }) => {
+const Table = ({ data, setDataToEdit, deleteData }) => {
     return (
         <div className="mt-5 text-center">
 
@@ -23,7 +23,7 @@ const Listado = ({ data, setDataToEdit, deleteData }) => {
                         </tr>
                     ) : (
                         data.map((el) => (
-                            <ListadoFila
+                            <Product
                                 key={el.id}
                                 el={el}
                                 setDataToEdit={setDataToEdit}
@@ -33,14 +33,9 @@ const Listado = ({ data, setDataToEdit, deleteData }) => {
                     )}
                 </tbody>
             </table>
-
-
-
-
-
         </div>
 
     );
 };
 
-export default Listado;
+export default Table;
