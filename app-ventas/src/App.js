@@ -1,11 +1,14 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-// import { useFirebaseApp } from "reactfire";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 // Componentes
-import Header from "./components/shared/Header";
+// import Header from "./components/shared/Header";
+import Header from './components/shared/Header';
+import Home from "./components/shared/Home";
+import Ventas from './components/ventas/Ventas';
+// import Login from './components/login/Login'
 // import Login from "./components/login/Login";
-import Ventas from "./components/ventas/Ventas";
+// import Ventas from "./components/ventas/Ventas";
 // import { Busqueda } from "./components/ventas/Busqueda";
 
 //import { Container } from "react-bootstrap";
@@ -55,20 +58,19 @@ const App = () => {
   // const firebase = useFirebaseApp();
   // console.log(firebase);
   return (
-    <>
-      <Router>
-        {/* <Header /> */}
-        <Switch>
-          {/* <Route exact path="/login" >
-            <Login />
-          </Route> */}
-          <Route exact path="/ventas">
-            <Ventas dataBase={dataBase} />
-          </Route>
-        </Switch>
-      </Router>
-    </>
+    <Router>
+      <Header />
+      <Switch>
+        <Route exact path="/ventas" >
+          <Ventas dataBase={dataBase} />
+        </Route>
+        <Route>
+          <Home exact path="/home" />
+        </Route>
+        <Home />
+      </Switch>
+    </Router>
   );
-}
+};
 
 export default App;

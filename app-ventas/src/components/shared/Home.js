@@ -1,8 +1,8 @@
-import React from "react";
-import { Card, Container, ListGroup } from "react-bootstrap";
+import React from 'react';
+import { Card, Container, ListGroup } from 'react-bootstrap';
 import "./Home.css";
 
-export function Home() {
+const Home = () => {
   return (
     <Container className="mt-2">
       <Card border="info home">
@@ -38,3 +38,5 @@ export function Home() {
     </Container>
   );
 }
+
+export default Home;
