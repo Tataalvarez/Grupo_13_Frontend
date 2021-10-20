@@ -1,3 +1,6 @@
+#root {
+    --title-color: #bbe1fa;
+}
 
 #contenedor {
     display: flex;
@@ -19,7 +22,7 @@
 
 .titulo {
     font-size: 250%;
-    color:#bbe1fa;
+    color: var(--title-color);
     text-align: center;
     margin-bottom: 20px;
 }
@@ -63,7 +66,7 @@
     color: #E4E4E4;
 }
 
-#BotonLogin {
+.BotonLogin {
     font-family: 'Overpass', sans-serif;
     font-size: 110%;
     color:#1b262c;
@@ -71,28 +74,29 @@
     height: 40px;
     border: none;
     
-    border-radius: 3px 3px 3px 3px;
-    -moz-border-radius: 3px 3px 3px 3px;
     -webkit-border-radius: 3px 3px 3px 3px;
     
     background-color: #bbe1fa;
-    
+}
+
+.BotonGoogle {
     margin-top: 10px;
 }
 
-#Botongoogle {
-    margin-top: 10px;
-  
-}
 #login button:hover {
     background-color: #0f4c75;
-    color:#bbe1fa;
+    color: var(--title-color);
 }
 
 .pie-form {
-    font-size: 90%;
+    font-size: 80%;
     text-align: center;
     margin-top: 15px;
+}
+
+.parrafo {
+    margin-bottom: 5px;
+    color: var(--title-color);
 }
 
 

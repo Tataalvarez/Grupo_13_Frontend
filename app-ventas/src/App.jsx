@@ -1,16 +1,15 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { useFirebaseApp } from "reactfire";
 
 // Componentes
-import { Navegacion } from "./components/shared/navbar/Navegacion";
-import { Home } from "./components/shared/home/Home";
-import Ventas from "./components/ventas/Ventas";
-import { Busqueda } from "./components/ventas/Busqueda";
+import Header from "./components/shared/Header";
+// import { Home } from "./components/shared/home/Home";
+// import Ventas from "./components/ventas/Ventas";
+// import { Busqueda } from "./components/ventas/Busqueda";
+import Login from "./components/login/Login";
+import './App.css';
 
-//import { Container } from "react-bootstrap";
-
-export function App() {
+function App() {
   const dataBase = [
     {
       id: 1,
@@ -52,19 +51,19 @@ export function App() {
       vendedor: "Tatiana",
     },
   ];
-  const firebase = useFirebaseApp();
-  console.log(firebase);
   return (
-    <>
       <Router>
-        <Navegacion />
+        <Header />
         <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/ventas">
-            <Ventas dataBase={dataBase} />
+          <Route exact path="/login" >
+            <Login />
           </Route>
+          {/* <Route exact path="/ventas">
+            <Ventas dataBase={dataBase} />
+          </Route> */}
         </Switch>
       </Router>
-    </>
   );
 }
+
+export default App;
