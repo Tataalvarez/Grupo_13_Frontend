@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+// Modulos
 import React, { Suspense } from "react";
 import ReactDOM from "react-dom";
 //import './index.css';
