@@ -63,6 +63,13 @@
   .buscar:hover #input{
       width: 240px;
   }
+
   .buscar #input:focus{
       width: 240px;
+  }
+
+  .titulo {
+    font-size: 12px;
+    text-transform: uppercase;
+    padding-left: 15px;
   }
