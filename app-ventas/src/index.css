@@ -1,4 +1,17 @@
+<<<<<<< HEAD
 #root {
   --title-color: #bbe1fa;
   --bg-color: #3282b8;
 }
+=======
+/*@import url(./components/products/products.css);*/
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+#root{
+  background-color: #0f4c75;
+  height: 100vh;
+}
+>>>>>>> feature/productos
