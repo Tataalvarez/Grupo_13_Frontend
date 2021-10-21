@@ -1,13 +1,14 @@
 // Modulos
 import React, { useState } from "react";
+import { Container, Card } from "react-bootstrap";
 
 // Componentes
 import ListForm from "./ListForm";
 import Table from "./Table";
-import './Products.css'
+import "./Products.css";
 //import { useTable } from 'react-table';
 
-const Productos = ({dataBase}) => {
+const Productos = ({ dataBase }) => {
   const [db, setDb] = useState(dataBase);
   const [dataToEdit, setDataToEdit] = useState(null);
 
@@ -17,46 +18,57 @@ const Productos = ({dataBase}) => {
     setDb([...db, data]);
   };
   const updateData = (data) => {
-    let newData = db.map(el => el.id === data.id ? data : el);
+    let newData = db.map((el) => (el.id === data.id ? data : el));
     setDb(newData);
   };
 
   const deleteData = (id) => {
-    let isDelete = window.confirm(`Estas seguro de eliminar el registro con el id '${id}?`
+    let isDelete = window.confirm(
+      `Estas seguro de eliminar el registro con el id '${id}?`
     );
 
-    if(isDelete){
-      let newData = db.filter(el => el.id !== id);
+    if (isDelete) {
+      let newData = db.filter((el) => el.id !== id);
       setDb(newData);
     } else {
       return;
     }
-  } 
+  };
 
   return (
     <>
-    {/* <div className="buscar">
+      {/* <div className="buscar">
         <input id="input" type="text" placeholder="Buscar" required/>
         <div id="btn-buscar">
             <i className="fas fa-search"></i>
         </div>
     </div> */}
-    <div className="card">
-        <div className="card-body">
-            <h2 className="text-center">Administrador de productos</h2>
+      <Container className="mt-2">
+        <Card>
+          <Card.Header className="text-center text-uppercase">
+            Registro de Productos
+          </Card.Header>
+          <Card.Body className="px-3">
             <ListForm
-                createData={createData}
-                updateData={updateData}
-                dataToEdit={dataToEdit}
-                setDataToEdit={setDataToEdit}
+              createData={createData}
+              updateData={updateData}
+              dataToEdit={dataToEdit}
+              setDataToEdit={setDataToEdit}
             />
+          </Card.Body>
+
+          <Card.Header className="text-center text-uppercase">
+            Listado de Ventas
+          </Card.Header>
+          <Card.Body>
             <Table
-                data={db} 
-                setDataToEdit={setDataToEdit} 
-                deleteData={deleteData} 
+              data={db}
+              setDataToEdit={setDataToEdit}
+              deleteData={deleteData}
             />
-        </div>
-    </div>
+          </Card.Body>
+        </Card>
+      </Container>
     </>
   );
 };
