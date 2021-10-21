@@ -37,7 +37,7 @@ const Ventas = ({dataBase}) => {
 
   return (
     <Container className="mt-2">
-      <Card border="info home">
+      <Card>
         <Card.Header className="text-center text-uppercase">
           Registro de Ventas
         </Card.Header>
@@ -48,12 +48,18 @@ const Ventas = ({dataBase}) => {
             dataToEdit={dataToEdit}
             setDataToEdit={setDataToEdit}
           />
-          <Tabla
+        </Card.Body>
+      
+        <Card.Header className="text-center text-uppercase bg='primary">
+          Listado de Ventas
+        </Card.Header>
+        <Card.Body>
+        <Tabla
             data={db}
             setDataToEdit={setDataToEdit}
             deleteData={deleteData}
           />
-        </Card.Body>
+        </Card.Body> 
       </Card>
     </Container>
   );

@@ -1,1 +1,4 @@
-/* @import url(./components/ventas/pedidos.css); */
+#root {
+  --title-color: #bbe1fa;
+  --bg-color: #3282b8;
+}

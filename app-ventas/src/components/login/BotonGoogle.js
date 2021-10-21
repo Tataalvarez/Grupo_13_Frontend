@@ -38,10 +38,16 @@ function BotonGoogle() {
       });
   };
 
+  const logout = () => {
+
+  };
+
   return (
+    <>
     <button className="BotonLogin my-2" type="submit" onClick={signInWithGoogle}>
-      Login with Google
+      Login
     </button>
+    </>
   );
 }
 

@@ -7,8 +7,6 @@ import {
   Row,
   Form,
 } from "react-bootstrap";
-//import { FormControl, Form, Col, Button, Row } from "react-bootstrap";
-//import { v4 as uuidv4 } from "uuid";
 
 const initialForm = {
   codigo: null,
