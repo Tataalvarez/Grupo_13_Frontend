@@ -1,12 +1,7 @@
 import React from "react";
 
 const Product = ({ el, setDataToEdit, deleteData }) => {
-  let {
-    id,
-    description,
-    price,
-    status
-  } = el;
+  let { id, description, price, status } = el;
   return (
     <>
       <tr>

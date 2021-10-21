@@ -1,4 +1,4 @@
-import axios from "axios";
+// import axios from "axios";
 import React, { useEffect, useState } from "react";
 
 const initialForm = {
@@ -26,7 +26,7 @@ const ListForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
     });
   };
 
-  const url = "mongodb://prmora:joalruva69%2a@localhost:27017/?authSource=admin&readPreference=primary&appname=MongoDB%20Compass&ssl=false";
+  // const url = "mongodb://prmora:joalruva69%2a@localhost:27017/?authSource=admin&readPreference=primary&appname=MongoDB%20Compass&ssl=false";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -43,8 +43,8 @@ const ListForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
     }
     
     handleReset();
-    const res = await axios.post(url, form);
-    console.log(res);
+    // const res = await axios.post(url, form);
+    // console.log(res);
   };
 
   const handleReset = (e) => {
