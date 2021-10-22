@@ -9,17 +9,17 @@ import {
 } from "react-bootstrap";
 
 const initialForm = {
-  codigo: null,
-  cantidad: "",
-  detalle: "",
-  precio: "",
+  code: null,
+  quantity: "",
+  description: "",
+  price: "",
   total: "",
-  fecha: "",
-  documento: "",
-  cliente: "",
-  estado: "",
+  date: "",
+  nit: "",
+  customer: "",
+  status: "",
   id: "",
-  vendedor: "",
+  seller: "",
   acciones: "",
 };
 
@@ -45,22 +45,22 @@ const Formulario = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
     e.preventDefault();
 
     if (
-      !form.cantidad ||
-      !form.detalle ||
-      !form.precio ||
+      !form.quantity ||
+      !form.description ||
+      !form.price ||
       !form.total ||
-      !form.fecha ||
-      !form.documento ||
-      !form.cliente ||
-      !form.estado ||
+      !form.date ||
+      !form.nit ||
+      !form.customer ||
+      !form.status ||
       !form.id ||
-      !form.vendedor
+      !form.seller
     ) {
       alert("Datos incompletos");
       return;
     }
 
-    if (form.codigo === null) {
+    if (form.code === null) {
       createData(form);
     } else {
       updateData(form);
@@ -82,30 +82,30 @@ const Formulario = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
             <FormControl
               size="sm"
               type="text"
-              name="cantidad"
+              name="quantity"
               placeholder="Cant"
               onChange={handleChange}
-              value={form.cantidad}
+              value={form.quantity}
             />
           </Col>
           <Col sm={5} className="px-2">
             <FormControl
               size="sm"
               type="text"
-              name="detalle"
+              name="description"
               placeholder="Detalle"
               onChange={handleChange}
-              value={form.detalle}
+              value={form.description}
             />
           </Col>
           <Col sm={2} className="px-2">
             <FormControl
               size="sm"
               type="text"
-              name="precio"
-              placeholder="V.Unitario"
+              name="price"
+              placeholder="Valor unitario"
               onChange={handleChange}
-              value={form.precio}
+              value={form.price}
             />
           </Col>
           <Col sm={2} className="px-2">
@@ -113,7 +113,7 @@ const Formulario = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
               size="sm"
               type="text"
               name="total"
-              placeholder="V.Total"
+              placeholder="Valor total"
               onChange={handleChange}
               value={form.total}
             />
@@ -122,10 +122,10 @@ const Formulario = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
             <FormControl
               size="sm"
               type="text"
-              name="estado"
+              name="status"
               placeholder="Estado Venta"
               onChange={handleChange}
-              value={form.estado}
+              value={form.status}
             />
           </Col>
         </InputGroup>
@@ -136,30 +136,30 @@ const Formulario = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
             <FormControl
               size="sm"
               type="text"
-              name="fecha"
+              name="date"
               placeholder="Fecha(DD-MM-YY)"
               onChange={handleChange}
-              value={form.fecha}
+              value={form.date}
             />
           </Col>
           <Col sm={2} className="px-2">
             <FormControl
               size="sm"
               type="text"
-              name="documento"
+              name="nit"
               placeholder="Documento"
               onChange={handleChange}
-              value={form.documento}
+              value={form.nit}
             />
           </Col>
           <Col sm={3} className="px-2">
             <FormControl
               size="sm"
               type="text"
-              name="cliente"
+              name="customer"
               placeholder="Nombre del Cliente"
               onChange={handleChange}
-              value={form.cliente}
+              value={form.customer}
             />
           </Col>
           <Col sm={2} className="px-2">
@@ -167,7 +167,7 @@ const Formulario = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
               size="sm"
               type="text"
               name="id"
-              placeholder="Id del Vendedor"
+              placeholder="Id Vendedor"
               onChange={handleChange}
               value={form.id}
             />
@@ -176,10 +176,10 @@ const Formulario = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
             <FormControl
               size="sm"
               type="text"
-              name="vendedor"
+              name="seller"
               placeholder="Nombre Vendedor"
               onChange={handleChange}
-              value={form.vendedor}
+              value={form.seller}
             />
           </Col>
         </InputGroup>

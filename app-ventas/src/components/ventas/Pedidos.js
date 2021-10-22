@@ -3,36 +3,36 @@ import React from "react";
 
 const Pedidos = ({ el, setDataToEdit, deleteData }) => {
   let {
-    codigo,
-    cantidad,
-    detalle,
-    precio,
+    code,
+    quantity,
+    description,
+    price,
     total,
-    fecha,
-    cliente,
-    documento,
-    estado,
+    date,
+    nit,
+    customer,
+    status,
     id,
-    vendedor
+    seller
   } = el;
 
   return (
     <>
       <tr>
-        <td>{codigo}</td>
-        <td>{cantidad}</td>
-        <th>{detalle}</th>
-        <td>{precio}</td>
+        <td>{code}</td>
+        <td>{quantity}</td>
+        <th>{description}</th>
+        <td>{price}</td>
         <td>{total}</td>
-        <td>{fecha}</td>
-        <td>{documento}</td>
-        <td>{cliente}</td>
-        <td>{estado}</td>
+        <td>{date}</td>
+        <td>{nit}</td>
+        <td>{customer}</td>
+        <td>{status}</td>
         <td>{id}</td>
-        <td>{vendedor}</td>
+        <td>{seller}</td>
         <td>
           <i className="far fa-edit" onClick={() => setDataToEdit(el)}></i>
-          <i className="fas fa-trash-alt" onClick={() => deleteData(codigo)}></i>
+          <i className="fas fa-trash-alt" onClick={() => deleteData(code)}></i>
         </td>
       </tr>
     </>

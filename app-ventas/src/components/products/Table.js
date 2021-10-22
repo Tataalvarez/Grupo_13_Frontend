@@ -8,7 +8,7 @@ const Table = ({ data, setDataToEdit, deleteData }) => {
         <tr>
           <th scope="col">Id</th>
           <th scope="col">Descripción</th>
-          <th scope="col">Valor</th>
+          <th scope="col">V. Unitario</th>
           <th scope="col">Estado del producto</th>
           <th scope="col">Acciones</th>
         </tr>

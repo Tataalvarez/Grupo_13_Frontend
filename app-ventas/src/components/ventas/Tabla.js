@@ -9,9 +9,9 @@ const Tabla = ({ data, setDataToEdit, deleteData }) => {
         <tr>
           <th scope="col">Codigo</th>
           <th scope="col">Cantidad</th>
-          <th scope="col">Detalle</th>
-          <th scope="col">V.Unitario</th>
-          <th scope="col">V.Total</th>
+          <th scope="col">Descripción</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Total</th>
           <th scope="col">Fecha</th>
           <th scope="col">NIT</th>
           <th scope="col">Cliente</th>
@@ -25,7 +25,7 @@ const Tabla = ({ data, setDataToEdit, deleteData }) => {
         {data.length > 0 ? (
           data.map((el) => (
             <Pedidos
-              key={el.codigo}
+              key={el.code}
               el={el}
               setDataToEdit={setDataToEdit}
               deleteData={deleteData}

@@ -8,7 +8,7 @@ import Table from "./Table";
 import "./Products.css";
 //import { useTable } from 'react-table';
 
-const Productos = ({ dataBase }) => {
+const Products = ({ dataBase }) => {
   const [db, setDb] = useState(dataBase);
   const [dataToEdit, setDataToEdit] = useState(null);
 
@@ -36,41 +36,33 @@ const Productos = ({ dataBase }) => {
   };
 
   return (
-    <>
-      {/* <div className="buscar">
-        <input id="input" type="text" placeholder="Buscar" required/>
-        <div id="btn-buscar">
-            <i className="fas fa-search"></i>
-        </div>
-    </div> */}
-      <Container className="mt-2">
-        <Card>
-          <Card.Header className="text-center text-uppercase">
-            Registro de Productos
-          </Card.Header>
-          <Card.Body className="px-3">
-            <ListForm
-              createData={createData}
-              updateData={updateData}
-              dataToEdit={dataToEdit}
-              setDataToEdit={setDataToEdit}
-            />
-          </Card.Body>
+    <Container className="mt-2">
+      <Card>
+        <Card.Header className="text-center text-uppercase">
+          Registro de Productos
+        </Card.Header>
+        <Card.Body className="px-3">
+          <ListForm
+            createData={createData}
+            updateData={updateData}
+            dataToEdit={dataToEdit}
+            setDataToEdit={setDataToEdit}
+          />
+        </Card.Body>
 
-          <Card.Header className="text-center text-uppercase">
-            Listado de Ventas
-          </Card.Header>
-          <Card.Body>
-            <Table
-              data={db}
-              setDataToEdit={setDataToEdit}
-              deleteData={deleteData}
-            />
-          </Card.Body>
-        </Card>
-      </Container>
-    </>
+        <Card.Header className="text-center text-uppercase">
+          Listado de Productos
+        </Card.Header>
+        <Card.Body>
+          <Table
+            data={db}
+            setDataToEdit={setDataToEdit}
+            deleteData={deleteData}
+          />
+        </Card.Body>
+      </Card>
+    </Container>
   );
 };
 
-export default Productos;
+export default Products;

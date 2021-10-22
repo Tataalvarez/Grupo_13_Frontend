@@ -13,22 +13,22 @@ const Ventas = ({dataBase}) => {
   const [dataToEdit, setDataToEdit] = useState(null);
 
   const createData = (data) => {
-    data.codigo = Date.now();
+    data.code = Date.now();
     //console.log(data);
     setDb([...db, data]);
   };
   const updateData = (data) => {
-    let newData = db.map((el) => (el.codigo === data.codigo ? data : el));
+    let newData = db.map((el) => (el.code === data.code ? data : el));
     setDb(newData);
   };
 
-  const deleteData = (codigo) => {
+  const deleteData = (code) => {
     let isDelete = window.confirm(
-      `Estas seguro de eliminar el pedido con codigo: ${codigo}?`
+      `Estas seguro de eliminar el pedido con code: ${code}?`
     );
 
     if (isDelete) {
-      let newData = db.filter((el) => el.codigo !== codigo);
+      let newData = db.filter((el) => el.code !== code);
       setDb(newData);
     } else {
       return;

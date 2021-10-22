@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // Modulos
 import React from "react";
 import ReactDOM from "react-dom";
@@ -18,14 +17,6 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
-=======
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-
-import 'bootstrap/dist/css/bootstrap.min.css';
->>>>>>> feature/productos
 
 ReactDOM.render(
   <React.StrictMode>
