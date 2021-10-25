@@ -1,10 +1,12 @@
 import React from "react";
-import Product from "./Product";
+import { Link } from "react-router-dom";
+import EditProduct from "./EditProduct";
+import './styles.css'
 
-const Table = ({ data, setDataToEdit, deleteData }) => {
+const ListProduct = ({ data, setDataToEdit, deleteData }) => {
   return (
-    <table className="table table-bordered table-striped table-hover table-sm">
-      <thead>
+    <table className="table table-bordered table-striped table-hover table-responsive{-sm|-lg} table-sm">
+      <thead className="table-dark table-head">
         <tr>
           <th scope="col">Id</th>
           <th scope="col">Descripción</th>
@@ -16,11 +18,12 @@ const Table = ({ data, setDataToEdit, deleteData }) => {
       <tbody>
         {data.length > 0 ? (
           data.map((el) => (
-            <Product
+            <EditProduct
               key={el.id}
               el={el}
               setDataToEdit={setDataToEdit}
               deleteData={deleteData}
+              as={Link} to="/productos/editar"
             />
           ))
         ) : (
@@ -33,4 +36,4 @@ const Table = ({ data, setDataToEdit, deleteData }) => {
   );
 };
 
-export default Table;
+export default ListProduct;

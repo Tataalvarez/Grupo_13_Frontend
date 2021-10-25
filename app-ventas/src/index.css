@@ -1,17 +1,22 @@
-<<<<<<< HEAD
-#root {
-  --title-color: #bbe1fa;
+:root {
+  --primary: #158cba;
+  --brand-success: #28b62c;
+  --brand-info: #75caeb;
+  --brand-warning: #ff851b;
+  --brand-danger: #ff4136;
   --bg-color: #3282b8;
-}
-=======
-/*@import url(./components/products/products.css);*/
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  --title-color: #bbe1fa;
+  font-size: 14px;
+  height: 100vh;
+  max-height: 800px;
 }
 
-#root{
-  background-color: #0f4c75;
-  height: 100vh;
+.topping {
+  margin-top: 0.3rem;
+  vertical-align: text-bottom;
 }
->>>>>>> feature/productos
+
+.result {
+  margin-top: 1rem;
+}
+
