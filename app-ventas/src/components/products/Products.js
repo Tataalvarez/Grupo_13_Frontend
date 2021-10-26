@@ -1,10 +1,10 @@
 // Modulos
 import React, { useState } from "react";
-import { Container, Card } from "react-bootstrap";
+import { Container, Card, Button } from "react-bootstrap";
 
 // Componentes
-import ListForm from "./ListForm";
-import Table from "./Table";
+import CreateProducts from "./CreateProuct";
+import ListProduct from "./ListProduct";
 import "./Products.css";
 //import { useTable } from 'react-table';
 
@@ -37,29 +37,22 @@ const Products = ({ dataBase }) => {
 
   return (
     <Container className="mt-2">
-      <Card>
-        <Card.Header className="text-center text-uppercase">
-          Registro de Productos
-        </Card.Header>
-        <Card.Body className="px-3">
-          <ListForm
-            createData={createData}
-            updateData={updateData}
-            dataToEdit={dataToEdit}
-            setDataToEdit={setDataToEdit}
-          />
-        </Card.Body>
-
-        <Card.Header className="text-center text-uppercase">
+      <Card className="card">
+        <Card.Header className="titulo">
           Listado de Productos
         </Card.Header>
-        <Card.Body>
-          <Table
+        <Card.Body className="text-center">
+          <ListProduct
             data={db}
             setDataToEdit={setDataToEdit}
             deleteData={deleteData}
           />
         </Card.Body>
+        <Card.Footer>
+          <Button>
+            Agregar Productos
+          </Button>
+        </Card.Footer>
       </Card>
     </Container>
   );

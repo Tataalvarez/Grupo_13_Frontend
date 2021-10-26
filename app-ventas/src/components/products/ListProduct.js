@@ -1,5 +1,5 @@
 import React from "react";
-import Product from "./Product";
+import Product from "./EditProduct";
 
 const Table = ({ data, setDataToEdit, deleteData }) => {
   return (

@@ -1,4 +1,4 @@
-#root {
+:root {
   font-size: 14px;
   height: 100vh;
   max-height: 800px;
@@ -69,7 +69,17 @@
   }
 
   .titulo {
-    font-size: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    color: black;
     text-transform: uppercase;
-    padding-left: 15px;
+    text-align: center;
+  }
+
+  .card {
+    height: 89vh;
+  }
+
+  .card-body {
+    overflow-y: auto;
   }
