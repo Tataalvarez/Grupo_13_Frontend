@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Container, Card, Button } from "react-bootstrap";
 
 // Componentes
-import CreateProducts from "./CreateProuct";
+// import CreateProducts from "./CreateProuct";
 import ListProduct from "./ListProduct";
 import "./Products.css";
 //import { useTable } from 'react-table';

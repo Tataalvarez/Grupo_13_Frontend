@@ -1,7 +1,7 @@
 import React from "react";
-import Product from "./EditProduct";
+import EditProduct from "./EditProduct";
 
-const Table = ({ data, setDataToEdit, deleteData }) => {
+const ListProduct = ({ data, setDataToEdit, deleteData }) => {
   return (
     <table className="table table-bordered table-striped table-hover table-sm">
       <thead>
@@ -16,7 +16,7 @@ const Table = ({ data, setDataToEdit, deleteData }) => {
       <tbody>
         {data.length > 0 ? (
           data.map((el) => (
-            <Product
+            <EditProduct
               key={el.id}
               el={el}
               setDataToEdit={setDataToEdit}
@@ -33,4 +33,4 @@ const Table = ({ data, setDataToEdit, deleteData }) => {
   );
 };
 
-export default Table;
+export default ListProduct;
