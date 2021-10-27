@@ -39,11 +39,7 @@ const Products = ({ dataBase }) => {
           Listado de Productos
         </Card.Header>
         <Card.Body>
-          <ListUsers
-            data={db}
-            setDataToEdit={setDataToEdit}
-            deleteData={deleteData}
-          />
+          <ListUsers data={db} />
         </Card.Body>
       </Card>
     </Container>

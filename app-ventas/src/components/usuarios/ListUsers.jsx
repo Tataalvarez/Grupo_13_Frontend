@@ -1,8 +1,6 @@
 import React from "react";
-import { useRowSelect } from "react-table";
-import Users from "./Users";
 
-const ListUsers = ({ data, setDataToEdit, deleteData }) => {
+const ListUsers = ({ data }) => {
   return (
     <table className="table table-bordered table-striped table-hover table-sm">
       <thead>
@@ -15,20 +13,11 @@ const ListUsers = ({ data, setDataToEdit, deleteData }) => {
         </tr>
       </thead>
       <tbody>
-        {data.length > 0 ? (
-          data.map((el) => (
-            <Users
-              key={el.id}
-              el={el}
-              setDataToEdit={setDataToEdit}
-              deleteData={deleteData}
-            />
+        {
+          data.map((el, index) => (
+            <td key={index}>{el}</td>
           ))
-        ) : (
-          <tr>
-            <td colSpan="5">Sin datos</td>
-          </tr>
-        )}
+        }
       </tbody>
     </table>
   );
