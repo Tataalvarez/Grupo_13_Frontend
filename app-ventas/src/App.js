@@ -2,16 +2,22 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 // Componentes
-import Header from './components/shared/Header';
+import Header from "./components/shared/Header";
 import Home from "./components/shared/Home";
-import Ventas from './components/ventas/Ventas';
-import Login from './components/login/Login';
-import Products from './components/products/Products';
+import Ventas from "./components/ventas/Ventas";
+import Login from "./components/login/Login";
+import Products from "./components/products/Products";
+import Usuarios from "./components/usuarios/Usuarios";
+import ListUsers from "./components/usuarios/ListUsers";
+import "./index.css";
 
 const App = () => {
   const dataBase = [
     {
       code: 1,
+      nombre: "Juan",
+      rol: "Vendedor",
+      estado: "Activo",
       quantity: 9,
       description: "Camiseta talla XL",
       price: 50,
@@ -54,15 +60,21 @@ const App = () => {
     <Router>
       <Header />
       <Switch>
-        <Route path="/login" >
+        <Route path="/login">
           <Login />
         </Route>
-        <Route path="/ventas" >
+        <Route path="/ventas">
           <Ventas dataBase={dataBase} />
         </Route>
         <Route path="/productos">
           <Products dataBase={dataBase} />
         </Route>
+        <Route path="/usuarios" dataBase={dataBase} component={Usuarios}  />
+        <Switch>
+          <Route path="/usuarios/listar">
+            <ListUsers data={dataBase} />
+          </Route>
+        </Switch>
         <Route>
           <Home exact path="/" />
         </Route>

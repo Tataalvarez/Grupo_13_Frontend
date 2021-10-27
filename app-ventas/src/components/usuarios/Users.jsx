@@ -1,14 +1,21 @@
 import React from "react";
+//import "./Pedidos.css";
 
-const Product = ({ el, setDataToEdit, deleteData }) => {
-  let { id, description, price, status } = el;
+const Pedidos = ({ el, setDataToEdit, deleteData }) => {
+  let {
+    id,
+    nombre,
+    rol,
+    estado
+  } = el;
+
   return (
     <>
       <tr>
         <td>{id}</td>
-        <td>{description}</td>
-        <td>{price}</td>
-        <td>{status}</td>
+        <td>{nombre}</td>
+        <th>{rol}</th>
+        <td>{estado}</td>
         <td>
           <i className="far fa-edit" onClick={() => setDataToEdit(el)}></i>
           <i className="fas fa-trash-alt" onClick={() => deleteData(id)}></i>
@@ -16,6 +23,6 @@ const Product = ({ el, setDataToEdit, deleteData }) => {
       </tr>
     </>
   );
-};
+}
 
-export default Product;
+export default Pedidos;

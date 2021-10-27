@@ -103,5 +103,5 @@ dist
 # TernJS port file
 .tern-port
 
-# Ocultando carpeta anteriores
-src/compnents/anteriores/
+# directorios sin seguimiento
+src/components/.anteriores/

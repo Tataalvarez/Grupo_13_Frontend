@@ -1,6 +1,5 @@
 import React from "react";
 import Pedidos from "./Pedidos";
-import "./Ventas.css";
 
 const Tabla = ({ data, setDataToEdit, deleteData }) => {
   return (

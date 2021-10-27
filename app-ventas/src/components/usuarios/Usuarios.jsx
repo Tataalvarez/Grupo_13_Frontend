@@ -3,10 +3,7 @@ import React, { useState } from "react";
 import { Container, Card } from "react-bootstrap";
 
 // Componentes
-import ListForm from "./ListForm";
-import Table from "./Table";
-import "./Products.css";
-//import { useTable } from 'react-table';
+import ListUsers from "./ListUsers";
 
 const Products = ({ dataBase }) => {
   const [db, setDb] = useState(dataBase);
@@ -24,7 +21,7 @@ const Products = ({ dataBase }) => {
 
   const deleteData = (id) => {
     let isDelete = window.confirm(
-      `Estas seguro de eliminar el registro con el id '${id}?`
+      `Estas seguro de eliminar el usuario: '${id}?`
     );
 
     if (isDelete) {
@@ -39,22 +36,10 @@ const Products = ({ dataBase }) => {
     <Container className="mt-2">
       <Card>
         <Card.Header className="text-center text-uppercase">
-          Registro de Productos
-        </Card.Header>
-        <Card.Body className="px-3">
-          <ListForm
-            createData={createData}
-            updateData={updateData}
-            dataToEdit={dataToEdit}
-            setDataToEdit={setDataToEdit}
-          />
-        </Card.Body>
-
-        <Card.Header className="text-center text-uppercase">
           Listado de Productos
         </Card.Header>
         <Card.Body>
-          <Table
+          <ListUsers
             data={db}
             setDataToEdit={setDataToEdit}
             deleteData={deleteData}

@@ -1,22 +1,23 @@
 import React from "react";
-import Product from "./Product";
+import { useRowSelect } from "react-table";
+import Users from "./Users";
 
-const Table = ({ data, setDataToEdit, deleteData }) => {
+const ListUsers = ({ data, setDataToEdit, deleteData }) => {
   return (
     <table className="table table-bordered table-striped table-hover table-sm">
       <thead>
         <tr>
           <th scope="col">Id</th>
-          <th scope="col">Descripción</th>
-          <th scope="col">V. Unitario</th>
-          <th scope="col">Estado del producto</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Rol</th>
+          <th scope="col">Estado</th>
           <th scope="col">Acciones</th>
         </tr>
       </thead>
       <tbody>
         {data.length > 0 ? (
           data.map((el) => (
-            <Product
+            <Users
               key={el.id}
               el={el}
               setDataToEdit={setDataToEdit}
@@ -33,4 +34,4 @@ const Table = ({ data, setDataToEdit, deleteData }) => {
   );
 };
 
-export default Table;
+export default ListUsers;

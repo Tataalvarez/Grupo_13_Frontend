@@ -1,11 +1,10 @@
 import React from 'react';
 import { Card, Container, ListGroup } from 'react-bootstrap';
-import "./Home.css";
 
 const Home = () => {
   return (
     <Container className="mt-2">
-      <Card border="info home">
+      <Card className="cardheight">
         <Card.Header className="text-center">
           Desarrollo Web - Ciclo 3 - MisionTIC 2021
         </Card.Header>

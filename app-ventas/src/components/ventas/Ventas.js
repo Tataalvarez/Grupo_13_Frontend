@@ -6,7 +6,6 @@ import { Container, Card } from "react-bootstrap";
 // Componentes
 import Formulario from "./Formulario";
 import Tabla from "./Tabla";
-import "./Ventas.css";
 
 const Ventas = ({dataBase}) => {
   const [db, setDb] = useState(dataBase);

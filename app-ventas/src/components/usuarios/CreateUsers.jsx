@@ -3,12 +3,12 @@ import { Form, InputGroup, Col, FormControl, Button } from "react-bootstrap";
 
 const initialForm = {
   id: null,
-  description: "",
-  price: "",
-  status: "",
+  nombre: "",
+  rol: "",
+  estado: "",
 };
 
-const ListForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
+const CreateUsers = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
   const [form, setForm] = useState(initialForm);
 
   useEffect(() => {
@@ -56,34 +56,34 @@ const ListForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
     <Form onSubmit={handleSubmit}>
       <h3 className="titulo">{dataToEdit ? "Editar" : "Añadir"}</h3>
       <InputGroup className="mb-3">
-        <Col sm={6} className="px-2">
+        <Col sm={3} className="px-2">
           <FormControl
             size="sm"
             type="text"
-            name="description"
-            placeholder="Descripción del producto"
+            name="nombre"
+            placeholder="Nombre del Usuario"
             onChange={handleChange}
-            value={form.description}
+            value={form.nombre}
           />
         </Col>
         <Col sm={2} className="px-2">
           <FormControl
             size="sm"
             type="text"
-            name="price"
-            placeholder="Valor unitario"
+            name="rol"
+            placeholder="Vendedor/Administrador"
             onChange={handleChange}
-            value={form.price}
+            value={form.rol}
           />
         </Col>
         <Col sm={2} className="px-2">
           <FormControl
             size="sm"
             type="text"
-            name="status"
+            name="estado"
             placeholder="Estado"
             onChange={handleChange}
-            value={form.status}
+            value={form.estado}
           />
         </Col>
         <Col>
@@ -108,4 +108,4 @@ const ListForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
   );
 };
 
-export default ListForm;
+export default CreateUsers;
