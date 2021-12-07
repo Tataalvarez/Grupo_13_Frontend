@@ -7,35 +7,24 @@ const Tabla = ({ data, setDataToEdit, deleteData }) => {
     <table className="table table-bordered table-striped table-hover table-sm">
       <thead>
         <tr>
-          <th scope="col">Codigo</th>
-          <th scope="col">Cantidad</th>
-          <th scope="col">Descripción</th>
-          <th scope="col">Precio</th>
-          <th scope="col">Total</th>
-          <th scope="col">Fecha</th>
-          <th scope="col">NIT</th>
-          <th scope="col">Cliente</th>
-          <th scope="col">Estado</th>
           <th scope="col">Id</th>
-          <th scope="col">Vendedor</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Apellido</th>
+          <th scope="col">Identificacion</th>
           <th scope="col">Acciones</th>
         </tr>
       </thead>
       <tbody>
-        {data.length > 0 ? (
-          data.map((el) => (
+        {data && 
+          data.getUsers.map((el) => (
             <Pedidos
-              key={el.code}
+              key={el.id}
               el={el}
               setDataToEdit={setDataToEdit}
               deleteData={deleteData}
             />
           ))
-        ) : (
-          <tr>
-            <td colSpan="12">Sin datos</td>
-          </tr>
-        )}
+        }
       </tbody>
     </table>
   );

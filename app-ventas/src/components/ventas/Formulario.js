@@ -9,18 +9,10 @@ import {
 } from "react-bootstrap";
 
 const initialForm = {
-  code: null,
-  quantity: "",
-  description: "",
-  price: "",
-  total: "",
-  date: "",
-  nit: "",
-  customer: "",
-  status: "",
   id: "",
-  seller: "",
-  acciones: "",
+  nombre: "",
+  identificacion: "",
+  apellido: "",
 };
 
 const Formulario = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
@@ -45,16 +37,9 @@ const Formulario = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
     e.preventDefault();
 
     if (
-      !form.quantity ||
-      !form.description ||
-      !form.price ||
-      !form.total ||
-      !form.date ||
-      !form.nit ||
-      !form.customer ||
-      !form.status ||
-      !form.id ||
-      !form.seller
+      !form.nombre ||
+      !form.apellido ||
+      !form.identificacion
     ) {
       alert("Datos incompletos");
       return;
@@ -82,104 +67,30 @@ const Formulario = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
             <FormControl
               size="sm"
               type="text"
-              name="quantity"
+              name="nombre"
               placeholder="Cant"
               onChange={handleChange}
-              value={form.quantity}
+              value={form.nombre}
             />
           </Col>
           <Col sm={5} className="px-2">
             <FormControl
               size="sm"
               type="text"
-              name="description"
+              name="apellido"
               placeholder="Detalle"
               onChange={handleChange}
-              value={form.description}
+              value={form.apellido}
             />
           </Col>
           <Col sm={2} className="px-2">
             <FormControl
               size="sm"
               type="text"
-              name="price"
+              name="identificacion"
               placeholder="Valor unitario"
               onChange={handleChange}
-              value={form.price}
-            />
-          </Col>
-          <Col sm={2} className="px-2">
-            <FormControl
-              size="sm"
-              type="text"
-              name="total"
-              placeholder="Valor total"
-              onChange={handleChange}
-              value={form.total}
-            />
-          </Col>
-          <Col sm={2} className="px-2">
-            <FormControl
-              size="sm"
-              type="text"
-              name="status"
-              placeholder="Estado Venta"
-              onChange={handleChange}
-              value={form.status}
-            />
-          </Col>
-        </InputGroup>
-      </Row>
-      <Row>
-        <InputGroup className="mb-3">
-          <Col sm={2} className="px-2">
-            <FormControl
-              size="sm"
-              type="text"
-              name="date"
-              placeholder="Fecha(DD-MM-YY)"
-              onChange={handleChange}
-              value={form.date}
-            />
-          </Col>
-          <Col sm={2} className="px-2">
-            <FormControl
-              size="sm"
-              type="text"
-              name="nit"
-              placeholder="Documento"
-              onChange={handleChange}
-              value={form.nit}
-            />
-          </Col>
-          <Col sm={3} className="px-2">
-            <FormControl
-              size="sm"
-              type="text"
-              name="customer"
-              placeholder="Nombre del Cliente"
-              onChange={handleChange}
-              value={form.customer}
-            />
-          </Col>
-          <Col sm={2} className="px-2">
-            <FormControl
-              size="sm"
-              type="text"
-              name="id"
-              placeholder="Id Vendedor"
-              onChange={handleChange}
-              value={form.id}
-            />
-          </Col>
-          <Col sm={2} className="px-2">
-            <FormControl
-              size="sm"
-              type="text"
-              name="seller"
-              placeholder="Nombre Vendedor"
-              onChange={handleChange}
-              value={form.seller}
+              value={form.identificacion}
             />
           </Col>
         </InputGroup>

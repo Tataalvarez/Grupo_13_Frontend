@@ -6,16 +6,15 @@ const Table = ({ data, setDataToEdit, deleteData }) => {
     <table className="table table-bordered table-striped table-hover table-sm">
       <thead>
         <tr>
-          <th scope="col">Id</th>
-          <th scope="col">Descripción</th>
-          <th scope="col">V. Unitario</th>
-          <th scope="col">Estado del producto</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Apellido</th>
+          <th scope="col">Identificacion</th>
           <th scope="col">Acciones</th>
         </tr>
       </thead>
       <tbody>
         {data.length > 0 ? (
-          data.map((el) => (
+          data.getUsers.map((el) => (
             <Product
               key={el.id}
               el={el}

@@ -3,9 +3,9 @@ import { Form, InputGroup, Col, FormControl, Button } from "react-bootstrap";
 
 const initialForm = {
   id: null,
-  description: "",
-  price: "",
-  status: "",
+  nombre: "",
+  apellido: "",
+  identificacion: "",
 };
 
 const ListForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
@@ -60,30 +60,30 @@ const ListForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
           <FormControl
             size="sm"
             type="text"
-            name="description"
-            placeholder="Descripción del producto"
+            name="nombre"
+            placeholder="Titulo del proyecto"
             onChange={handleChange}
-            value={form.description}
+            value={form.nombre}
           />
         </Col>
         <Col sm={2} className="px-2">
           <FormControl
             size="sm"
             type="text"
-            name="price"
-            placeholder="Valor unitario"
+            name="apellido"
+            placeholder="Presupuesto"
             onChange={handleChange}
-            value={form.price}
+            value={form.apellido}
           />
         </Col>
         <Col sm={2} className="px-2">
           <FormControl
             size="sm"
             type="text"
-            name="status"
-            placeholder="Estado"
+            name="identificacion"
+            placeholder="Nombre de Lider"
             onChange={handleChange}
-            value={form.status}
+            value={form.identificacion}
           />
         </Col>
         <Col>

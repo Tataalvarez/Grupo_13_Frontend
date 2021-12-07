@@ -1,19 +1,21 @@
 // Modulos
 import React, { useState } from "react";
 import { Container, Card } from "react-bootstrap";
+import { useQuery } from "@apollo/client";
+import { GET_USERS } from '../../graphql/user';
 
 // Componentes
 import ListForm from "./ListForm";
 import Table from "./Table";
 import "./Products.css";
-//import { useTable } from 'react-table';
 
-const Products = ({ dataBase }) => {
-  const [db, setDb] = useState(dataBase);
+const Products = () => {
+  const {data} = useQuery(GET_USERS);
+  const [db, setDb] = useState({data});
   const [dataToEdit, setDataToEdit] = useState(null);
 
   const createData = (data) => {
-    data.id = Date.now();
+    // data.id = Date.now();
     //console.log(data);
     setDb([...db, data]);
   };

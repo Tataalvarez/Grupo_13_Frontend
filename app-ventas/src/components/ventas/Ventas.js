@@ -1,6 +1,8 @@
 // Modulos
 import React, { useState } from "react";
 import { Container, Card } from "react-bootstrap";
+import { useQuery, useMutation } from '@apollo/client';
+import { GET_USERS } from '../../graphql/user';
 //import { v4 as uuidv4 } from "uuid"
 
 // Componentes
@@ -8,27 +10,30 @@ import Formulario from "./Formulario";
 import Tabla from "./Tabla";
 import "./Ventas.css";
 
-const Ventas = ({dataBase}) => {
-  const [db, setDb] = useState(dataBase);
+const Ventas = () => {
+  const { data } = useQuery(GET_USERS);
+  // const [ deleteProject ] = useMutation(DELETE_PROJECT);
+  const database = useState([]);
+  const [db, setDb] = useState(database);
   const [dataToEdit, setDataToEdit] = useState(null);
 
   const createData = (data) => {
-    data.code = Date.now();
+    //data.id = Date.now();
     //console.log(data);
     setDb([...db, data]);
   };
   const updateData = (data) => {
-    let newData = db.map((el) => (el.code === data.code ? data : el));
+    let newData = db.map((el) => (el.id === data.ide ? data : el));
     setDb(newData);
   };
 
-  const deleteData = (code) => {
+  const deleteData = (id) => {
     let isDelete = window.confirm(
-      `Estas seguro de eliminar el pedido con code: ${code}?`
+      `Estas seguro de eliminar el pedido con code: ${id}?`
     );
 
     if (isDelete) {
-      let newData = db.filter((el) => el.code !== code);
+      let newData = data.deleteProject.filter((el) => el.id !== id);
       setDb(newData);
     } else {
       return;
@@ -55,7 +60,7 @@ const Ventas = ({dataBase}) => {
         </Card.Header>
         <Card.Body>
         <Tabla
-            data={db}
+            data={data}
             setDataToEdit={setDataToEdit}
             deleteData={deleteData}
           />
